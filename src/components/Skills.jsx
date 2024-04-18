@@ -82,7 +82,7 @@ const skillTwo = [
 ];
 
   return (
-    <div name="Skills">
+    <div name="Skills mt-20 lg:mt-0">
        
                 <div className="text-white pb-20">
                 <div className="pt-40 pb-20" data-aos="flip-right">

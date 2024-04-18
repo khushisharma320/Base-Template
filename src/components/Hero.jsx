@@ -74,7 +74,7 @@ function Hero() {
                 </div>
             </div>
 
-            <div className="absolute z-10 top-96 lg:flex flex-col md:top-[35%] left-0 md:fixed md:z-50">
+            <div className="absolute z-10 top-[72%] lg:flex flex-col md:top-[35%] left-0 md:fixed md:z-50">
             <ul>
                 {
                     links.map(({id, name, href, style, download})=>{

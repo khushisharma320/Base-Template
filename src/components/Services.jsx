@@ -36,7 +36,7 @@ function Services() {
     </div>
             <h3 className="text-xl text-gray-500 font-medium text-center">Here are the services we are providing to you.</h3>
 
-            <div className="grid grid-cols-3 gap-4 mt-12">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
                 {/* services list */}
                 {
                     services.map((service, idx) => {

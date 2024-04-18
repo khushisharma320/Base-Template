@@ -59,7 +59,7 @@ function Header() {
   return (
     <div className="flex justify-between items-center w-full h-20 px-16 text-gray-500 bg-neutral-900 fixed z-40 shadow-xl shadow-gray-800">
             <div className="">
-                <h2 className="font-signature font-normal text-2xl text-white">Khushi</h2>
+                <h2 className="font-signature font-normal text-2xl text-white">John Doe</h2>
             </div>
 
             <ul className="hidden md:flex">
