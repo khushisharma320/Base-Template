@@ -1,9 +1,17 @@
-import React from 'react'
+import { useRef } from "react";
+import "../App.css";
 
 function CustomCursor() {
+
+  const dot = useRef(null);
+  const dotoutline = useRef(null);
+
   return (
-    <div>CustomCursor</div>
+    <div className=" z-auto">
+    <div ref={dot} className="cursor-dot"></div>
+    <div ref={dotoutline} className="cursor-dot-outline"></div>
+    </div>
   )
 }
 
-export default CustomCursor
+export default CustomCursor;

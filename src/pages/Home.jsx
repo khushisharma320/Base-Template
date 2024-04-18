@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -9,7 +9,18 @@ import Projects from '../components/Projects';
 import Timeline from '../components/Timeline';
 import Testimonial from '../components/Testimonial';
 import Contact from '../components/Contact';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function Home() {
+      
+  useEffect(() => {
+    AOS.init({
+    duration: 1000, // Global animation duration
+    once: true, // Only once animation
+    });
+    }, []);
+
     const params = useParams();
     const navigate = useNavigate();
     
