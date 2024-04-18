@@ -4,79 +4,11 @@ import {
 } from "react-vertical-timeline-component";
 
 import "react-vertical-timeline-component/style.min.css";
-import { GrWorkshop } from "react-icons/gr";
-import { FaSchool } from "react-icons/fa";
 
 
 
-function Timeline() {
 
-  let timelineElements = [
-    {
-      id: 1,
-      title: "Frontend Developer",
-      location: "Dragontail, Ascana",
-      description:
-        "Converting data to a graphical interface, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that data.",
-      buttonText: "View Frontend Projects",
-      date: "August 2016 - present",
-      icon: "work",
-    },
-    {
-      id: 2,
-      title: "Backend Developer",
-      location: "Skystead, Craonia",
-      description:
-        "Working hand-in-hand with front-end developers by providing the outward facing web application elements server-side logic. Creating the logic to make the web app function properly, and accomplishing this through the use of server-side scripting languages.",
-      buttonText: "View Backend Projects",
-      date: "June 2013 - August 2016",
-      icon: "work",
-    },
-    {
-      id: 3,
-      title: "Quality Assurance Engineer",
-      location: "South Warren, Geshington",
-      description:
-        "Assessing the quality of specifications and technical design documents in order to ensure timely, relevant and meaningful feedback.",
-      buttonText: "Company Website",
-      date: "September 2011 - June 2013",
-      icon: "work",
-    },
-    {
-      id: 4,
-      title: "Oak Ridge College",
-      location: "South Warren, Geshington",
-      description:
-        "Online Course in Magical Beasts and Wonders of the World - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
-      buttonText: "Course Certificate",
-      date: "September 2011",
-      icon: "school",
-    },
-    {
-      id: 5,
-      title: "Hawking College",
-      location: "Skystead, Craonia",
-      description:
-        "College - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
-      buttonText: "College Projects",
-      date: "2007 - 2011",
-      icon: "school",
-    },
-    {
-      id: 6,
-      title: "Marble Hills Grammar School",
-      location: "Dragontail, Ascana",
-      description:
-        "Highschool - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
-      date: "2003 - 2007",
-      icon: "school",
-    },
-  ];
-  
-
-  let workIconStyles = { background: "#06D6A0" };
-  let schoolIconStyles = { background: "#f9c74f" };
-
+function Timeline({props1, props2}) {
   return (
     <div name="TimeLine">
     <div className="pt-40 pb-20" data-aos="flip-right">
@@ -84,38 +16,49 @@ function Timeline() {
     </div>
     <div className="mx-16">
     <VerticalTimeline>
-      {timelineElements.map((element) => {
-        let isWorkIcon = element.icon === "work";
-        let showButton =
-          element.buttonText !== undefined &&
-          element.buttonText !== null &&
-          element.buttonText !== "";
+      {props1.map((element) => {
 
         return (
           <VerticalTimelineElement
-            key={element.key}
-            date={element.date}
+            key={element.sequence}
+            date={element.endDate}
             dateClassName="date"
-            iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
-            icon={isWorkIcon ? <GrWorkshop/> : <FaSchool/>}
+
           >
-            <h3 className="vertical-timeline-element-title">
-              {element.title}
+            <h3 className="vertical-timeline-element-title font-bold">
+              {element.jobTitle}
             </h3>
-            <h5 className="vertical-timeline-element-subtitle">
-              {element.location}
+            <h5 className="vertical-timeline-element-subtitle text-blue-900">
+              {element.jobLocation}
             </h5>
-            <p id="description">{element.description}</p>
-            {showButton && (
-              <a
-                className={`button ${
-                  isWorkIcon ? "workButton" : "schoolButton"
-                }`}
-                href="/"
-              >
-                {element.buttonText}
-              </a>
-            )}
+            <p className="text-purple-800" id="description">{element.summary}</p>
+          </VerticalTimelineElement>
+        );
+      })}
+    </VerticalTimeline>
+    </div>
+
+    <div className="pt-40 pb-20" data-aos="flip-right">
+        <h2 className="font-bold text-4xl flex justify-center text-white">Education History</h2>
+    </div>
+    <div className="mx-16">
+    <VerticalTimeline>
+      {props2.map((element) => {
+
+        return (
+          <VerticalTimelineElement
+            key={element.sequence}
+            date={element.endDate}
+            dateClassName="date"
+
+          >
+            <h3 className="vertical-timeline-element-title font-bold">
+              {element.jobTitle}
+            </h3>
+            <h5 className="vertical-timeline-element-subtitle text-blue-800">
+              {element.jobLocation}
+            </h5>
+            <p className="text-purple-800" id="description">{element.summary}</p>
           </VerticalTimelineElement>
         );
       })}

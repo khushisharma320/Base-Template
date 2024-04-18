@@ -1,33 +1,6 @@
 import { MdOutlineMenuBook } from "react-icons/md";
 
-function Services() {
-
-  const services = [
-    {
-        icon: <MdOutlineMenuBook />,
-        text: "UI / UX Designing"
-    },
-    {
-        icon: <MdOutlineMenuBook />,
-        text: "Web Development"
-    },
-    {
-        icon: <MdOutlineMenuBook />,
-        text: "Web Design"
-    },
-    {
-        icon: <MdOutlineMenuBook />,
-        text: "App Development"
-    },
-    {
-        icon: <MdOutlineMenuBook />,
-        text: "UI / UX Designing"
-    },
-    {
-        icon: <MdOutlineMenuBook />,
-        text: "UI / UX Designing"
-    }
-];
+function Services({props}) {
 
   return (
     <div name="Services" className="mb-12 mt-12 px-12 py-4">
@@ -39,11 +12,11 @@ function Services() {
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
                 {/* services list */}
                 {
-                    services.map((service, idx) => {
+                    props.map(({name, image},index) => {
                         return (
-                            <div key={idx} className="flex items-center gap-4 text-sm md:text-xl font-medium bg-[#d9d9d9f0] p-4 rounded-md">
-                                {service.icon}
-                                <span>{service.text}</span>
+                            <div key={index} className="flex items-center gap-4 text-sm md:text-xl font-medium bg-[#d9d9d9f0] p-4 rounded-md">
+                               <img width={40} src={image.url} alt="" /> 
+                                <span>{name}</span>
                             </div>
                         );
                     })
@@ -58,4 +31,4 @@ function Services() {
   )
 }
 
-export default Services
+export default Services;

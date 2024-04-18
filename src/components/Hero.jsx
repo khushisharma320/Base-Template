@@ -1,56 +1,8 @@
 import { FaArrowRight } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 
-function Hero() {
+function Hero({props}) {
 
-  const links = [
-    {
-        id: 1,
-        name: (
-            <>
-            LinkedIn <FaLinkedin size={30}/>
-            </>
-        ),
-        href: "https://linkedin.com",
-        style: "rounded-tr-md",
-        icon: <FaLinkedin size={30}/>
-    },
-    {
-        id: 2,
-        name: (
-            <>
-            GitHub <FaGithub size={30}/>
-            </>
-        ),
-        href: "https://github.com",
-        icon:  <FaGithub size={30}/>    
-    },
-    {
-        id: 3,
-        name: (
-            <>
-            Mail <HiOutlineMail size={30}/>
-            </>
-        ),
-        href: "mailto:johndoe@gmail.com",
-        icon: <HiOutlineMail size={30}/>
-    },
-    {
-        id: 4,
-        name: (
-            <>
-            Resume <BsFillPersonLinesFill size={30}/>
-            </>
-        ),
-        href: "/johndoe.pdf",
-        style: "rounded-br-md",
-        download: true,
-        icon: <BsFillPersonLinesFill size={30}/>
-    },
-];
 
   return (
     <>
@@ -77,10 +29,10 @@ function Hero() {
             <div className="absolute z-10 top-[72%] lg:flex flex-col md:top-[35%] left-0 md:fixed md:z-50">
             <ul>
                 {
-                    links.map(({id, name, href, style, download})=>{
+                    props.map(({id, platform, url, image})=>{
                         return (
 
-                            <li key={id} className={"flex justify-between items-center w-40 h-10 md:h-14 px-4 bg-yellow-800 ml-[-100px] hover:rounded-md hover:ml-[-10px] duration-500 " + style }><a href={href} className="flex justify-between items-center w-full text-white" download={download} target="_blank" rel="noreferrer">{name}</a></li>
+                            <li key={id} className={"flex justify-between items-center w-40 h-10 md:h-14 px-4 bg-gray-800 ml-[-100px] hover:rounded-md hover:ml-[-10px] duration-500  text-white" }><a href={url} className="flex justify-between items-center w-full text-white" target="_blank" rel="noreferrer">{platform} <img width = {25} src={image.url} alt="" /> </a></li>
                         )
                     })
                 }
