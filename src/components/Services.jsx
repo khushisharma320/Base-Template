@@ -14,7 +14,7 @@ function Services({props}) {
                 {
                     props.map(({name, image},index) => {
                         return (
-                            <div key={index} className="flex items-center gap-4 text-xs md:text-xl font-medium bg-[#d9d9d9f0] rounded-md" data-aos="fade-right">
+                            <div key={index} className="flex items-center gap-4 text-xs md:text-xl font-medium bg-[#d9d9d9f0] rounded-md" data-aos="flip-up">
                                <img width={40} src={image.url} alt="" /> 
                                 <span>{name}</span>
                             </div>

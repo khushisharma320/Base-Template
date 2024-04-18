@@ -8,7 +8,7 @@ function Hero({props}) {
     <>
     <div name="Home" className="relative z-10 h-screen" data-aos="zoom-out">
             <div className="absolute text-white w-full top-32 lg:top-16 text-center z-10">
-                <h2 className="mt-32 lg:mt-48 mb-8 text-4xl md:text-6xl font-extrabold tracking-wide">Hello! <span className="text-yellow-700">I'm John doe</span></h2>
+                <h2 className="mt-32 lg:mt-48 mb-8 text-4xl md:text-6xl font-extrabold tracking-wide" data-aos="flip-up">Hello! <span className="text-yellow-700">I'm John doe</span></h2>
                 <h2 className="text-xl md:text-4xl inline"> <span className="font-extrabold"> 
                 <Typewriter 
                 words={["FrontEnd Developer", "Web Developer", "Web Designer"]}
