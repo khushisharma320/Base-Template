@@ -65,7 +65,7 @@ function Home() {
     const filteredEducation = user?.timeline?.filter((item) => item.forEducation && item.enabled);
     const filteredExperience = user?.timeline?.filter((item) => !item.forEducation && item.enabled);
 
-    console.log(filteredSocialHandles);
+    console.log(filteredTestimonials);
 
     if (isLoading) {
         return <div className="w-full h-screen bg-black flex items-center justify-center text-center">Loading..</div>;
