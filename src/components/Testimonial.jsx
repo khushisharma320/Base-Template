@@ -18,7 +18,7 @@ const res = {
        <div className="pt-40 pb-20" data-aos="flip-right">
         <h2 className="font-bold text-4xl flex justify-center text-white">What Our Clients Say</h2>
     </div>
-    <div className="ml-36" data-aos="zoom-out">
+    <div className="ml-20" data-aos="zoom-out">
       <OwlCarousel className='owl-theme' animateOut autoplayTimeout={2000} responsive={res} margin={8} autoplay={true} loop dots = {false}>
       {
                     props.map(({image, review, name}, index) => {
